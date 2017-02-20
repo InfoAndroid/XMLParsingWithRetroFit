@@ -11,8 +11,9 @@
     tools:context="com.mukesh.xmlparsingwithratrofit.MainActivity">
 
     <ListView
-        android:id="@+id/lv_foodName"
+        android:id="@+id/lv_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:divider="@color/colorAccent"
         android:dividerHeight="2dp" />
 </RelativeLayout>

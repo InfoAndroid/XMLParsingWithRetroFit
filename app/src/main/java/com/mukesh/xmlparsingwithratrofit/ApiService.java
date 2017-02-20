@@ -8,6 +8,6 @@ import retrofit.http.GET;
  */
 
 public interface ApiService {
-    @GET("/xml/simple.xml")
-    void getUser(Callback<BreakFastMenu> callback);
+    @GET("/rssfeedstopstories.cms")
+    void getUser(Callback<RSS> callback);
 }

@@ -24,7 +24,7 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 public class MainActivity extends AppCompatActivity {
-    private ListView lv_foodName;
+    private ListView lv_item;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -36,24 +36,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        lv_foodName = (ListView) findViewById(R.id.lv_foodName);
+        lv_item = (ListView) findViewById(R.id.lv_item);
 
         RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint("http://www.w3schools.com")
+                .setEndpoint("http://timesofindia.indiatimes.com")
                 .setConverter(new SimpleXmlConverter())
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();
         ApiService apiService = restAdapter.create(ApiService.class);
-        apiService.getUser(new Callback<BreakFastMenu>() {
+        apiService.getUser(new Callback<RSS>() {
             @Override
-            public void success(BreakFastMenu breakFastMenu, Response response) {
+            public void success(RSS breakFastMenu, Response response) {
 
-                List<Food> mItems = new ArrayList<Food>();
-                mItems = breakFastMenu.foodList;
+                List<Channel.Item> mItems = new ArrayList<Channel.Item>();
+                mItems = breakFastMenu.getChannel().getItems();
 
-                FoodAdapter adapter = new FoodAdapter(MainActivity.this, mItems);
-                lv_foodName.setAdapter(adapter);
-                Log.e("LST", mItems.get(0).name);
+                ChannelAdapter adapter = new ChannelAdapter(MainActivity.this, mItems);
+                lv_item.setAdapter(adapter);
+                Log.e("LST", mItems.get(0).getTitle());
 
             }
 

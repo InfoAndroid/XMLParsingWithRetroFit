@@ -5,34 +5,27 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_foodName"
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="text"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
 
     <android.support.v4.widget.Space
         android:layout_width="match_parent"
         android:layout_height="5dp" />
 
+
     <TextView
-        android:id="@+id/tv_foodPrice"
+        android:id="@+id/tv_Desc"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="text" />
 
     <android.support.v4.widget.Space
         android:layout_width="match_parent"
         android:layout_height="5dp" />
 
-    <TextView
-        android:id="@+id/tv_foodDesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="5dp" />
-
-    <TextView
-        android:id="@+id/tv_foodCalorise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 </LinearLayout>
